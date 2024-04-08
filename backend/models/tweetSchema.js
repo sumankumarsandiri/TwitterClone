@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const tweetSchema = new mongoose.Schema(
   {
-    discription: {
+    description: {
       type: String,
       required: true,
     },
@@ -14,12 +14,12 @@ const tweetSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    bookmark: {
-      type: Array,
-      default: [],
-    },
+    // bookmarks: {
+    //   type: Array,
+    //   default: [],
+    // },
   },
-  { timestamp: true }
+  { timestamps: true }
 );
 //timestamp konsa person kis time par create karliya
-export const Tweet = mongoose.model("Tweet", userSchema);
+export const Tweet = mongoose.model("Tweet", tweetSchema);

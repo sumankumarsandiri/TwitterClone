@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import databaseConnection from "./config/database.js";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoute.js";
+import tweetRoute from "./routes/tweetRoute.js";
 
 dotenv.config({
   path: ".env",
@@ -24,7 +25,7 @@ app.use(cookieParser());
 
 //api
 app.use("/api/v1/user", userRoutes);
-
+app.use("/api/v1/tweet", tweetRoute);
 // app.get("/home", (req, res) => {
 //   res.status(203).json({
 //     message: "coming from backend",

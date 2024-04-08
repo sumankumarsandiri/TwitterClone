@@ -28,8 +28,12 @@ const userSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
+    bookmarks: {
+      type: Array,
+      default: [],
+    },
   },
-  { timestamp: true }
+  { timestamps: true }
 );
 //timestamp konsa person kis time par create karliya
 export const User = mongoose.model("User", userSchema);
